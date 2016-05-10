@@ -1,0 +1,338 @@
+
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta property="og:title" content="Homefinds.co.uk | Discover exclusive discounts for the best homeware brands and home services"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="https://www.getagent.co.uk/london-mayor/"/>
+    <meta property="og:description" content="Answer a few simple questions and see who would be the best mayor for you."/>
+    <meta name="description" content="Answer a few simple questions and see who would be the best mayor for you."/>
+    <title>Homefinds.co.uk | Discover exclusive discounts for the best homeware brands and home services</title>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+    <script src="assets/javascript/application.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-76744121-1', 'auto');
+      ga('send', 'pageview');	
+    </script>
+  </head>
+</html>
+<body>
+  <script>
+    $(document).ready(function() {
+    	$(".modal").modal({positionVertical: false});
+    
+    	$(".tabbed-nav > li").on("click", function() {
+    
+    		$(".tabbed-nav > li").removeClass("is-active");
+    		$(this).addClass("is-active");
+    
+    		var selection = $(this).data("filter");
+    
+    	});
+    
+    	function filterItems(filter) {
+    
+    		$(".deals > li").addClass("is-hidden");
+    		$(".deals > li[data-category='"+filter+"']").removeClass("is-hidden");
+    	}
+    
+    
+    	$(".tabbed-nav li").on('click', function() {
+    		var filter = $(this).data("filter");
+    		
+    		console.log(filter);
+    		if (filter == "all") {
+    			$(".deals > li").removeClass("is-hidden");
+    		}	
+    
+    		else  {
+    			filterItems(filter);
+    		}
+    	});
+    
+    
+    
+    
+    	$("[data-deal]").on("click", function() {
+    		var test = $(this).data("deal");
+    		var headline = $(this).parents(".deal").find(".deal-title").text();
+    		//- alert(headline);
+    		$(".modal-deal-header").css({"background-image": "url(assets/images/partners/"+test+".jpg)"});
+    
+    		$(".modal-deal h1").text(headline);
+    
+    	});
+    
+    });
+    
+    
+    
+  </script>
+  <div class="modal-backdrop is-hidden"></div>
+  <div id="login" class="modal is-hidden">
+    <div class="modal-close"></div>
+    <div class="modal-section">
+      <h1 class="text-center text-serif weight-regular margin-bottom-base">Welcome Back</h1>
+      <form class="margin-bottom-base">
+        <div class="form-entry">
+          <input type="email" placeholder="Email Address"/>
+        </div>
+        <div class="form-entry">
+          <input type="password" placeholder="Password"/>
+          <div class="text-small text-serif margin-top-base text-underline"> <a href="#" class="link">Forgot your password?</a></div>
+        </div>
+        <input type="submit" value="Login" class="button button-primary button-block"/>
+      </form>
+      <div class="text-center text-small text-serif">Don't have an account? <a href="#" class="link text-underline" data-modal="signup">Register</a></div>
+    </div>
+  </div>
+  <div id="signup" class="modal is-hidden">
+    <div class="modal-close"></div>
+    <div class="modal-section text-center">
+      <h1 class="text-serif weight-regular margin-bottom-base">Join The Club</h1>
+      <form class="margin-bottom-base">
+        <div class="form-entry">
+          <input type="text" placeholder="Full Name" class="form-required"/>
+          <div class="form-error-message is-hidden">This field is required.</div>
+        </div>
+        <div class="form-entry">
+          <input type="email" placeholder="Email Address" class="form-required"/>
+          <div class="form-error-message is-hidden">This field is required.</div>
+        </div>
+        <div class="form-entry">
+          <input type="password" placeholder="Password" class="form-required"/>
+          <div class="form-error-message is-hidden">This field is required.</div>
+        </div>
+        <input type="submit" value="Join the club" class="button button-primary button-block"/>
+      </form>
+      <p class="text-small text-serif">We won't share your details with anyone.</p>
+    </div>
+  </div>
+  <div id="deal" class="modal modal-deal is-hidden">
+    <div class="modal-close"></div>
+    <div class="modal-deal-header"></div>
+    <div class="modal-deal-form">
+      <div class="modal-section text-center">
+        <h1 class="margin-bottom-base">Get 10% off from AppleYard Flowers</h1>
+        <form class="margin-bottom-base">
+          <div class="form-entry">
+            <input type="text" placeholder="Full Name"/>
+          </div>
+          <div class="form-entry">
+            <input type="email" placeholder="Email Address"/>
+          </div>
+          <div class="form-entry">
+            <input type="password" placeholder="Password"/>
+          </div>
+          <input type="submit" value="Join the club" class="button button-primary button-block"/>
+        </form>
+        <p class="text-small text-serif">We won't share your details with anyone.</p>
+      </div>
+    </div>
+  </div>
+  <div class="masthead"><a href="#" class="logo"><img src="assets/images/logo.png"/></a><a data-modal="login" class="login-link">Already registered? Login</a>
+    <div class="masthead-inner">
+      <h1 class="masthead-heading">Make Your Home Awesome</h1>
+      <p class="masthead-subheading">HomeFinds is a members’ card, focused on the needs of homeowners giving you exclusive discounts on a handpicked selection of homeware shops and other services.</p><a href="#" data-modal="signup" class="button button-primary button-medium margin-bottom-half">Get Your Card Now</a><img src="assets/images/card.png" class="masthead-card"/>
+    </div>
+  </div>
+  <section class="landing-page-section">
+    <div class="container-x-large">
+      <ul class="tabbed-nav">
+        <li data-filter="all" class="is-active"><a>All</a></li>
+        <li data-filter="Food &amp; Drink"><a>Food &amp; Drink</a></li>
+        <li data-filter="Homeware"><a>Homeware</a></li>
+        <li data-filter="Kitchen"><a>Kitchen</a></li>
+        <li data-filter="Health &amp; Beauty"><a>Health &amp; Beauty</a></li>
+        <li data-filter="Lifestyle"><a>Lifestyle</a></li>
+        <li data-filter="Pets"><a>Pets</a></li>
+        <li data-filter="Family"><a>Family</a></li>
+      </ul>
+      <ul class="deals">
+        <li data-category="Homeware">
+          <div class="deal">
+            <div style="background-image: url(assets/images/partners/natural-bed-company.jpg)" class="deal-photo">
+              <div class="deal-tag">Homeware</div>
+            </div>
+            <div class="deal-content">
+              <h2 class="deal-title">£50 Off Any Bed</h2>
+              <p class="deal-supplier">Natural bed Company</p>
+              <p class="deal-description">We make a range of solid wooden beds, bedroom furniture and bedding. Our beds are Made in Sheffield and built to last. Our wooden beds are made from solid timbers, no veneers.</p><a href="#" data-deal="natural-bed-company" data-modal="deal" class="button button-empty button-small button-block">Claim Discount</a>
+            </div>
+          </div>
+        </li>
+        <li data-category="Homeware">
+          <div class="deal">
+            <div style="background-image: url(assets/images/partners/cp-hart.jpg)" class="deal-photo">
+              <div class="deal-tag">Homeware</div>
+            </div>
+            <div class="deal-content">
+              <h2 class="deal-title">15% Off Everything</h2>
+              <p class="deal-supplier">CP Hart</p>
+              <p class="deal-description">Established bathroom retailer, we offer luxury bathrooms, accessories and furniture. With fourteen showrooms across the UK.</p><a href="#" data-deal="cp-hart" data-modal="deal" class="button button-empty button-small button-block">Claim Discount</a>
+            </div>
+          </div>
+        </li>
+        <li data-category="Homeware">
+          <div class="deal">
+            <div style="background-image: url(assets/images/partners/white-company.jpg)" class="deal-photo">
+              <div class="deal-tag">Homeware</div>
+            </div>
+            <div class="deal-content">
+              <h2 class="deal-title">20% off everything</h2>
+              <p class="deal-supplier">White Company</p>
+              <p class="deal-description">The White Company designs, produces and sells edited collections of the most gorgeous bed linen, home accessories, clothing, fragrances and gifts.</p><a href="#" data-deal="white-company" data-modal="deal" class="button button-empty button-small button-block">Claim Discount</a>
+            </div>
+          </div>
+        </li>
+        <li data-category="Food &amp; Drink">
+          <div class="deal">
+            <div style="background-image: url(assets/images/partners/cocoarunners.jpg)" class="deal-photo">
+              <div class="deal-tag">Food &amp; Drink</div>
+            </div>
+            <div class="deal-content">
+              <h2 class="deal-title">15% Off All Gifts</h2>
+              <p class="deal-supplier">Cocoa Runners</p>
+              <p class="deal-description">The world's best chocolate bars delivered monthly to your door</p><a href="#" data-deal="cocoarunners" data-modal="deal" class="button button-empty button-small button-block">Claim Discount</a>
+            </div>
+          </div>
+        </li>
+        <li data-category="Food &amp; Drink">
+          <div class="deal">
+            <div style="background-image: url(assets/images/partners/cru-kafe.jpg)" class="deal-photo">
+              <div class="deal-tag">Food &amp; Drink</div>
+            </div>
+            <div class="deal-content">
+              <h2 class="deal-title">25% off all products</h2>
+              <p class="deal-supplier">Cru Kafe</p>
+              <p class="deal-description">CRU Kafe delivers the finest Organic certified coffees from around the world, in the convenience of Nespresso® compatible, eco-friendly pods.</p><a href="#" data-deal="cru-kafe" data-modal="deal" class="button button-empty button-small button-block">Claim Discount</a>
+            </div>
+          </div>
+        </li>
+        <li data-category="Lifestyle">
+          <div class="deal">
+            <div style="background-image: url(assets/images/partners/bloom-and-wild.jpg)" class="deal-photo">
+              <div class="deal-tag">Lifestyle</div>
+            </div>
+            <div class="deal-content">
+              <h2 class="deal-title">£10 off first order</h2>
+              <p class="deal-supplier">Bloom &amp; Wild</p>
+              <p class="deal-description">The gift of fresh flowers, delivered straight through the letterbox.</p><a href="#" data-deal="bloom-and-wild" data-modal="deal" class="button button-empty button-small button-block">Claim Discount</a>
+            </div>
+          </div>
+        </li>
+        <li data-category="Homeware">
+          <div class="deal">
+            <div style="background-image: url(assets/images/partners/loaf.jpg)" class="deal-photo">
+              <div class="deal-tag">Homeware</div>
+            </div>
+            <div class="deal-content">
+              <h2 class="deal-title">10% off everything</h2>
+              <p class="deal-supplier">Loaf</p>
+              <p class="deal-description">Swish sofas, bonza beds and cool kitchen-y stuff. Champions of serious quality and good old British manufacturing, we’re experts in the art of snug.</p><a href="#" data-deal="loaf" data-modal="deal" class="button button-empty button-small button-block">Claim Discount</a>
+            </div>
+          </div>
+        </li>
+        <li data-category="Homeware">
+          <div class="deal">
+            <div style="background-image: url(assets/images/partners/garden-trading.jpg)" class="deal-photo">
+              <div class="deal-tag">Homeware</div>
+            </div>
+            <div class="deal-content">
+              <h2 class="deal-title">10% off Homeware</h2>
+              <p class="deal-supplier">Garden Trading</p>
+              <p class="deal-description">Garden Trading creates products that are instantly at home in any house or garden, whilst standing out in their simplicity and design. </p><a href="#" data-deal="garden-trading" data-modal="deal" class="button button-empty button-small button-block">Claim Discount</a>
+            </div>
+          </div>
+        </li>
+        <li data-category="Homeware">
+          <div class="deal">
+            <div style="background-image: url(assets/images/partners/urbanara.jpg)" class="deal-photo">
+              <div class="deal-tag">Homeware</div>
+            </div>
+            <div class="deal-content">
+              <h2 class="deal-title">15% off Everything</h2>
+              <p class="deal-supplier">Urbanara</p>
+              <p class="deal-description">URBANARA provides the world with beautiful, high-quality homewares, without the sky-high price tag. Made with love. Direct to you.</p><a href="#" data-deal="urbanara" data-modal="deal" class="button button-empty button-small button-block">Claim Discount</a>
+            </div>
+          </div>
+        </li>
+        <li data-category="Homeware">
+          <div class="deal">
+            <div style="background-image: url(assets/images/partners/west-elm.jpg)" class="deal-photo">
+              <div class="deal-tag">Homeware</div>
+            </div>
+            <div class="deal-content">
+              <h2 class="deal-title">15% off Everything</h2>
+              <p class="deal-supplier">West Elm</p>
+              <p class="deal-description">West elm designs clean, simple products for modern living. </p><a href="#" data-deal="west-elm" data-modal="deal" class="button button-empty button-small button-block">Claim Discount</a>
+            </div>
+          </div>
+        </li>
+        <li data-category="Homeware">
+          <div class="deal">
+            <div style="background-image: url(assets/images/partners/bruno-sleep.jpg)" class="deal-photo">
+              <div class="deal-tag">Homeware</div>
+            </div>
+            <div class="deal-content">
+              <h2 class="deal-title">£35 Off</h2>
+              <p class="deal-supplier">Bruno Sleep</p>
+              <p class="deal-description">At BRUNO, our mission is to bring you the best mattress so you can attain the ultimate night's sleep. Intelligent 7-zone orthopaedic support - Made in Germany.</p><a href="#" data-deal="bruno-sleep" data-modal="deal" class="button button-empty button-small button-block">Claim Discount</a>
+            </div>
+          </div>
+        </li>
+        <li data-category="Kitchen">
+          <div class="deal">
+            <div style="background-image: url(assets/images/partners/borough-kitchen.jpg)" class="deal-photo">
+              <div class="deal-tag">Kitchen</div>
+            </div>
+            <div class="deal-content">
+              <h2 class="deal-title">£10 off first order</h2>
+              <p class="deal-supplier">Borough Kitchen</p>
+              <p class="deal-description">The cookshops at Borough Market and Hampstead, London. Online shop at www.boroughkitchen.com sells everything the at-home chef needs for kitchen and table.</p><a href="#" data-deal="borough-kitchen" data-modal="deal" class="button button-empty button-small button-block">Claim Discount</a>
+            </div>
+          </div>
+        </li>
+        <li data-category="Homeware">
+          <div class="deal">
+            <div style="background-image: url(assets/images/partners/swoon-editions.jpg)" class="deal-photo">
+              <div class="deal-tag">Homeware</div>
+            </div>
+            <div class="deal-content">
+              <h2 class="deal-title">10% Off Everything</h2>
+              <p class="deal-supplier">Swoon Editions</p>
+              <p class="deal-description">We are an online furniture brand that enables people to buy beautifully handcrafted furniture at honest, reasonable prices. </p><a href="#" data-deal="swoon-editions" data-modal="deal" class="button button-empty button-small button-block">Claim Discount</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <div class="signup-bar">
+    <div class="container-large clearfix">
+      <p class="signup-bar-text text-medium">Sign up now to access exclusive discounts with the leading homeware stores – it’s free!</p><a class="signup-bar-button button button-secondary button-medium">Join Now</a>
+    </div>
+  </div>
+  <footer class="site-footer">
+    <div class="container-x-large">
+      <ul class="site-footer-links">
+        <li> <a href="#">About</a></li>
+        <li> <a href="https://docs.google.com/a/getagent.co.uk/forms/d/17rCTozUekzXl8GwkmT44NfcvE6TgI5HOybpRnQdMQkE/prefill">List Your Business</a></li>
+        <li> <a href="#">Legals</a></li>
+        <li> <a href="#">FAQ</a></li>
+        <li> <a href="mailto:hello@casanueva.com">Contact</a></li>
+      </ul>
+      <ul class="site-footer-social">
+        <li><a href="#"><img src="assets/images/icons/facebook.svg"/></a></li>
+        <li><a href="#"><img src="assets/images/icons/twitter.svg"/></a></li>
+        <li><a href="#"><img src="assets/images/icons/pinterest.svg"/></a></li>
+      </ul>
+    </div>
+  </footer>
+</body>

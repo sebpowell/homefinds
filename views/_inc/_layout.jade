@@ -1,0 +1,29 @@
+include _head.jade
+
+body
+	block body
+
+	footer.site-footer
+		.container-x-large
+			ul.site-footer-links
+				li 
+					a(href="#") About
+				li 
+					a(href="https://docs.google.com/a/getagent.co.uk/forms/d/17rCTozUekzXl8GwkmT44NfcvE6TgI5HOybpRnQdMQkE/prefill") List Your Business
+				li 
+					a(href="#") Legals
+				li 
+					a(href="#") FAQ
+				li 
+					a(href="mailto:#{email}") Contact
+
+			ul.site-footer-social
+				li
+					a(href="#")
+						img(src="#{images}icons/facebook.svg")
+				li
+					a(href="#")
+						img(src="#{images}icons/twitter.svg")
+				li
+					a(href="#")
+						img(src="#{images}icons/pinterest.svg")

@@ -1,0 +1,96 @@
+$colors: (
+	brand: (
+		primary: #000000,
+		secondary: #E48F12
+	),
+
+	social: (
+		facebook: #103480,
+		twitter: #1DA1F2
+	),
+
+	greyscale: (
+		50: #FAFAFA,
+		100: #F5F5F5,
+		200: #EEEEEE,
+		300: #E0E0E0,
+		400: #BDBDBD,
+		500: #9E9E9E,
+		600: #757575,
+		700: #616161,
+		800: #424242,
+		900: #212121
+	),
+
+	keyline: (
+		light: #f0f0f0,
+		medium: #E4E4E4,
+		dark: #D9D9D8,
+	)
+);
+
+$fonts: (
+	primary: (
+		name: #{'Helvetica Neue', Helvetica, Arial, sans-serif},
+		weights: (
+			light: 100,
+			regular: 400,
+			semi-bold: 600,
+			bold: 700
+		),
+	),
+	secondary: (
+		name: #{"Futura-PT", 'Futura PT', sans-serif},
+		weights: (
+			light: 100,
+			regular: 400,
+			bold: 700
+		),
+	),
+);
+
+$breakpoints: (
+	device-x-small: 350px,
+	device-small: 480px,
+	device-medium: 780px,
+	device-medium-large: 960px,
+	device-large: 1280px,
+	device-x-large: 1400px
+);
+
+$misc: (baseFontSize: 16px);
+
+$font-sizes: (
+	x-small: 12px,
+	small: 14px,
+	base: 16px,
+	medium: 18px,
+	medium-large: 24px,
+	large: 32px,
+	x-large: 42px
+);
+
+$layers: (
+
+
+	backdrop: 2,
+	modal: 3,
+);
+
+$sizes: (
+  quarter: 4px,
+  half: 8px,
+  base: 16px, // 1rem
+  double-half: 24px,
+  double: 32px,
+  triple: 48px,
+  quad: 64px,
+);
+
+$grid: (
+	columns: 12,
+	gutter: 1/4,
+	breakpoint: "device-medium",
+	mobile-padding: 24px,
+	type: "padding"
+);

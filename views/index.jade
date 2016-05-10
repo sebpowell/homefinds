@@ -1,0 +1,407 @@
+include _inc/_head.jade
+extends _inc/_layout.jade
+
+block body
+	-
+		results = [
+				// {
+				// 	"tags": "Lifestyle",
+				// 	"backgroundImage": "appleyard-flowers",
+				// 	"title": "20% Off Your First Order",
+				// 	"description": "Appleyard London are the UK’s premier luxury online flower delivery and gifting retailer, born out of a passion for boutique floral design.",
+				// 	"supplier": "Appleyard Flowers",
+				// },
+				{
+					"tags": "Homeware",
+					"backgroundImage": "natural-bed-company",
+					"title": "£50 Off Any Bed",
+					"description": "We make a range of solid wooden beds, bedroom furniture and bedding. Our beds are Made in Sheffield and built to last. Our wooden beds are made from solid timbers, no veneers.",
+					"supplier": "Natural bed Company",
+				},
+				// {
+				// 	"tags": "Food & Drink",
+				// 	"backgroundImage": "gousto",
+				// 	"title": "First Box is Free",
+				// 	"description": "Everything you need to cook original, delicious recipes, delivered to your door. Now you're cooking!",
+				// 	"supplier": "Gousto",
+				// },
+				{
+					"tags": "Homeware",
+					"backgroundImage": "cp-hart",
+					"title": "15% Off Everything",
+					"description": "Established bathroom retailer, we offer luxury bathrooms, accessories and furniture. With fourteen showrooms across the UK.",
+					"supplier": "CP Hart",
+				},
+				{
+					"tags": "Homeware",
+					"backgroundImage": "white-company",
+					"title": "20% off everything",
+					"description": "The White Company designs, produces and sells edited collections of the most gorgeous bed linen, home accessories, clothing, fragrances and gifts.",
+					"supplier": "White Company",
+				},
+				{
+					"tags": "Food & Drink",
+					"backgroundImage": "cocoarunners",
+					"title": "15% Off All Gifts",
+					"description": "The world's best chocolate bars delivered monthly to your door",
+					// "website": "http://www.crukafe.com/",
+					"supplier": "Cocoa Runners",
+				},
+				{
+					"tags": "Food & Drink",
+					"backgroundImage": "cru-kafe",
+					"title": "25% off all products",
+					"description": "CRU Kafe delivers the finest Organic certified coffees from around the world, in the convenience of Nespresso® compatible, eco-friendly pods.",
+					"website": "http://www.crukafe.com/",
+					"supplier": "Cru Kafe",
+					"restrictions": "New customers only. Does not include Subscription orders.",
+					"code": "CRUHOME"
+				},
+				{
+					"tags": "Lifestyle",
+					"backgroundImage": "bloom-and-wild",
+					"title": "£10 off first order",
+					"description": "The gift of fresh flowers, delivered straight through the letterbox.",
+					"supplier": "Bloom & Wild",
+				},
+				// {
+				// 	"tags": "Homeware",
+				// 	"backgroundImage": "eve-mattress",
+				// 	"title": "£30 Off Your Order",
+				// 	"description": "We set out to create one mattress. The only mattress you will ever need. So we stripped away the gimmicks, the jargon and the confusion. The result was a product that was simply beautiful and beautifully simple.",
+				// 	"supplier": "Eve Mattress",
+				// },
+				{
+					"tags": "Homeware",
+					"backgroundImage": "loaf",
+					"title": "10% off everything",
+					"description": "Swish sofas, bonza beds and cool kitchen-y stuff. Champions of serious quality and good old British manufacturing, we’re experts in the art of snug.",
+					"supplier": "Loaf",
+				},
+				{
+					"tags": "Homeware",
+					"backgroundImage": "garden-trading",
+					"title": "10% off Homeware",
+					"description": "Garden Trading creates products that are instantly at home in any house or garden, whilst standing out in their simplicity and design. ",
+					"supplier": "Garden Trading",
+					"code": "HOMEFINDS ",
+					"restrictions": "Excludes indoor furniture, outdoor furniture and sale items. Does not apply to delivery charges"
+				},
+
+				{
+					"tags": "Homeware",
+					"backgroundImage": "urbanara",
+					"title": "15% off Everything",
+					"description": "URBANARA provides the world with beautiful, high-quality homewares, without the sky-high price tag. Made with love. Direct to you.",
+					"supplier": "Urbanara",
+					"code": "HOMEFINDS ",
+					"restrictions": "Excludes indoor furniture, outdoor furniture and sale items. Does not apply to delivery charges"
+				},
+				{
+					"tags": "Homeware",
+					"backgroundImage": "west-elm",
+					"title": "15% off Everything",
+					"description": "West elm designs clean, simple products for modern living. ",
+					"supplier": "West Elm",
+					"code": "HOMEFINDS ",
+					"restrictions": "Excludes indoor furniture, outdoor furniture and sale items. Does not apply to delivery charges"
+				},
+				{
+					"tags": "Homeware",
+					"backgroundImage": "bruno-sleep",
+					"title": "£35 Off",
+					"description": "At BRUNO, our mission is to bring you the best mattress so you can attain the ultimate night's sleep. Intelligent 7-zone orthopaedic support - Made in Germany.",
+					"supplier": "Bruno Sleep",
+					"code": "HF35",
+					"restrictions": "£35 off your first order at brunosleep.co.uk."
+				},
+				// {
+				// 	"tags": "Kitchen",
+				// 	"backgroundImage": "reiko-kaneko",
+				// 	"title": "10% off everything",
+				// 	"description": "Reiko Kaneko Ltd is a company designing fine bone china in elegant, functional shapes",
+				// 	"supplier": "Reiko Kaneko",
+				// },
+				// {
+				// 	"tags": "Kitchen",
+				// 	"backgroundImage": "falcon",
+				// 	"title": "50% off everything",
+				// 	"description": "Since the 1920s Falcon Enamelware has been an icon of British home life. Ice white with a distinctive blue rim, it is instantly recognisable as a design classic.",
+				// 	"supplier": "Falcon Enamelware",
+				// },
+				// {
+				// 	"tags": "Family",
+				// 	"backgroundImage": "kidsitter",
+				// 	"title": "50% off everything",
+				// 	"description": "A London-based babysitting service, that offers highly rated, experienced and trusted babysitters, recommended by mums and available when you need them.",
+				// 	"supplier": "Kidsitter",
+				// },
+				// {
+				// 	"tags": "Health & Beauty",
+				// 	"backgroundImage": "neals-yard",
+				// 	"title": "50% off everything",
+				// 	"description": "Organic Health & Beauty, Natural Remedies & Therapies. We develop our products free of harmful chemicals and research them to offer the most effective products.",
+				// 	"supplier": "Neals Yard",
+				// },
+				// {
+				// 	"tags": "Lifestyle",
+				// 	"backgroundImage": "notanotherbill",
+				// 	"title": "50% off everything",
+				// 	"description": "Our vision is to be the most unique gift service in the world. We strive to source, create and deliver presents that excite, inspire and delight our custom.",
+				// 	"supplier": "NotAnotherBill",
+				// },
+				// {
+				// 	"tags": "Lifestyle",
+				// 	"backgroundImage": "paperless-post",
+				// 	"title": "15% off birthday cards",
+				// 	"description": "Reimagining invitations through design and technology to help you connect at life's most memorable moments",
+				// 	"supplier": "Paperless Post",
+				// },
+				// {
+				// 	"tags": "Pets",
+				// 	"backgroundImage": "tailster",
+				// 	"title": "£10 off your first booking",
+				// 	"description": "Matching pet loving owners with pet loving sitters. Visit our website to make a booking or join our family as one of our professionals.",
+				// 	"supplier": "Tailster",
+				// },
+				// {
+				// 	"tags": "Food & Drink",
+				// 	"backgroundImage": "tipple-box",
+				// 	"title": "50% off everything",
+				// 	"description": "Cocktails by post. Never classics, always craft.",
+				// 	"supplier": "Tipple Box",
+				// },
+				// {
+				// 	"tags": "Family",
+				// 	"backgroundImage": "toucanbox",
+				// 	"title": "50% off everything",
+				// 	"description": "Create & Play the toucanBox way! Themed monthly adventures, delivered to your door, for ages 3-8.",
+				// 	"supplier": "Toucan Box",
+				// },
+				// {
+				// 	"tags": "Health & Beauty",
+				// 	"backgroundImage": "urban-massage",
+				// 	"title": "50% off everything",
+				// 	"description": "Book a massage to your home, office or hotel! Now in London, Manchester, Edinburgh, Glasgow or Birmingham.",
+				// 	"supplier": "Urban Massage",
+				// },
+				{
+					"tags": "Kitchen",
+					"backgroundImage": "borough-kitchen",
+					"title": "£10 off first order",
+					"description": "The cookshops at Borough Market and Hampstead, London. Online shop at www.boroughkitchen.com sells everything the at-home chef needs for kitchen and table.",
+					"supplier": "Borough Kitchen",
+				},
+				// {
+				// 	"tags": "Homeware",
+				// 	"backgroundImage": "anglepoise",
+				// 	"title": "50% off everything",
+				// 	"description": "The cookshops at Borough Market and Hampstead, London. Online shop at www.boroughkitchen.com sells everything the at-home chef needs for kitchen and table.",
+				// 	"supplier": "Anglepoise",
+				// },
+				// {
+				// 	"tags": "Health & Beauty",
+				// 	"backgroundImage": "cowshed",
+				// 	"title": "50% off everything",
+				// 	"description": "The cookshops at Borough Market and Hampstead, London. Online shop at www.boroughkitchen.com sells everything the at-home chef needs for kitchen and table.",
+				// 	"supplier": "Cowshed",
+				// },
+				// {
+				// 	"tags": "Homeware",
+				// 	"backgroundImage": "plumen",
+				// 	"title": "50% off everything",
+				// 	"description": "The cookshops at Borough Market and Hampstead, London. Online shop at www.boroughkitchen.com sells everything the at-home chef needs for kitchen and table.",
+				// 	"supplier": "Plumen",
+				// },
+				// {
+				// 	"tags": "Homeware",
+				// 	"backgroundImage": "nkuku",
+				// 	"title": "50% off everything",
+				// 	"description": "The cookshops at Borough Market and Hampstead, London. Online shop at www.boroughkitchen.com sells everything the at-home chef needs for kitchen and table.",
+				// 	"supplier": "Nkuku",
+				// },
+				// {
+				// 	"tags": "Homeware",
+				// 	"backgroundImage": "spitalfields-candle-company",
+				// 	"title": "50% off everything",
+				// 	"description": "The cookshops at Borough Market and Hampstead, London. Online shop at www.boroughkitchen.com sells everything the at-home chef needs for kitchen and table.",
+				// 	"supplier": "Spitalfields Candle Company",
+				// },
+				{
+					"tags": "Homeware",
+					"backgroundImage": "swoon-editions",
+					"title": "10% Off Everything",
+					"description": "We are an online furniture brand that enables people to buy beautifully handcrafted furniture at honest, reasonable prices. ",
+					"supplier": "Swoon Editions",
+				}
+			];
+
+
+	-
+		categories = [
+				"Food & Drink",
+				"Homeware", 
+				"Kitchen", 
+				"Health & Beauty",
+				"Lifestyle",
+				"Pets", 
+				"Family"
+			];
+
+
+	script.
+		$(document).ready(function() {
+			$(".modal").modal({positionVertical: false});
+
+			$(".tabbed-nav > li").on("click", function() {
+
+				$(".tabbed-nav > li").removeClass("is-active");
+				$(this).addClass("is-active");
+
+				var selection = $(this).data("filter");
+		
+			});
+
+			function filterItems(filter) {
+
+				$(".deals > li").addClass("is-hidden");
+				$(".deals > li[data-category='"+filter+"']").removeClass("is-hidden");
+			}
+
+
+			$(".tabbed-nav li").on('click', function() {
+				var filter = $(this).data("filter");
+				
+				console.log(filter);
+				if (filter == "all") {
+					$(".deals > li").removeClass("is-hidden");
+				}	
+
+				else  {
+					filterItems(filter);
+				}
+			});
+
+
+
+
+			$("[data-deal]").on("click", function() {
+				var test = $(this).data("deal");
+				var headline = $(this).parents(".deal").find(".deal-title").text();
+				//- alert(headline);
+				$(".modal-deal-header").css({"background-image": "url(assets/images/partners/"+test+".jpg)"});
+
+				$(".modal-deal h1").text(headline);
+
+			});
+
+		});
+
+
+
+	.modal-backdrop.is-hidden
+
+
+	.modal.is-hidden(id="login")
+		.modal-close
+		.modal-section
+			h1.text-center.text-serif.weight-regular.margin-bottom-base Welcome Back
+			form.margin-bottom-base
+				.form-entry
+					input(type="email" placeholder="Email Address")
+				.form-entry
+					input(type="password" placeholder="Password")
+					.text-small.text-serif.margin-top-base.text-underline 
+						a(href="#" class="link") Forgot your password?
+
+				input.button.button-primary.button-block(type="submit" value="Login")
+
+			
+			.text-center.text-small.text-serif Don't have an account? <a href="#" class="link text-underline" data-modal="signup">Register</a>
+
+			
+
+
+	.modal.is-hidden(id="signup")
+		.modal-close
+		.modal-section.text-center
+			h1.text-serif.weight-regular.margin-bottom-base Join The Club
+			form.margin-bottom-base
+				.form-entry
+					input.form-required(type="text" placeholder="Full Name")
+					.form-error-message.is-hidden This field is required.
+				.form-entry
+					input.form-required(type="email" placeholder="Email Address")
+					.form-error-message.is-hidden This field is required.
+				.form-entry
+					input.form-required(type="password" placeholder="Password")
+					.form-error-message.is-hidden This field is required.
+
+				input.button.button-primary.button-block(type="submit" value="Join the club")
+
+			p.text-small.text-serif We won't share your details with anyone.
+
+	.modal.modal-deal.is-hidden(id="deal")
+		.modal-close
+		.modal-deal-header
+		.modal-deal-form
+			.modal-section.text-center
+				h1.margin-bottom-base Get 10% off from AppleYard Flowers
+				//- h1.text-serif.weight-regular.margin-bottom-base Join The Club
+				form.margin-bottom-base
+					.form-entry
+						input(type="text" placeholder="Full Name")
+					.form-entry
+						input(type="email" placeholder="Email Address")
+					.form-entry
+						input(type="password" placeholder="Password")
+
+					input.button.button-primary.button-block(type="submit" value="Join the club")
+
+				p.text-small.text-serif We won't share your details with anyone.
+
+
+
+	.masthead
+		a.logo(href="#")
+			img(src="#{images}logo.png")
+
+		a.login-link(data-modal="login") Already registered? Login
+
+
+		.masthead-inner
+			h1.masthead-heading Make Your Home Awesome
+			p.masthead-subheading HomeFinds is a members’ card, focused on the needs of homeowners giving you exclusive discounts on a handpicked selection of homeware shops and other services.
+			a.button.button-primary.button-medium.margin-bottom-half(href="#" data-modal="signup") Get Your Card Now
+			//- .text-small.text-muted It's completely free!
+
+			img.masthead-card(src="#{images}card.png")
+
+
+	section.landing-page-section
+		.container-x-large
+
+			ul.tabbed-nav
+				li.is-active(data-filter="all")
+					a All
+				each category in categories
+					li(data-filter="#{category}")
+						a= category
+
+
+			ul.deals
+				each deal in results
+					li(data-category="#{deal.tags}")
+						.deal
+							.deal-photo(style="background-image: url(#{images}partners/#{deal.backgroundImage}.jpg)")
+								.deal-tag= deal.tags
+							.deal-content
+								h2.deal-title= deal.title
+								p.deal-supplier= deal.supplier
+								p.deal-description= deal.description
+								a(href="#" data-deal="#{deal.backgroundImage}" data-modal="deal").button.button-empty.button-small.button-block Claim Discount
+
+	.signup-bar
+		.container-large.clearfix
+			p.signup-bar-text.text-medium Sign up now to access exclusive discounts with the leading homeware stores – it’s free!
+			a.signup-bar-button.button.button-secondary.button-medium Join Now
