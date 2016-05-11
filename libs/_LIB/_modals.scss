@@ -1,0 +1,56 @@
+$modal-default: (
+	borderRadius: 3px,
+	textTransform: capitalize,
+	shadow: 0 2px 4px rgba(00,00,00,0.2),
+	shadowHover: 0 2px 10px rgba(00,00,00,0.2),
+	hoverBackground: lighten 20%,
+	hoverTransition: .5s,
+	padding: sizes(triple),
+);
+
+$modal-config: map-extend($modal-default, $modal-user);
+
+
+.modal-container {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(212,212,212,0.4);
+	z-index: 25
+}
+
+
+.modal-close {
+  position: absolute !important;
+  cursor: pointer;
+  // color: colors(greyscale, 900);
+  top: 10px;
+  right: 12px;
+ 
+  &:before {
+    content: "\00d7";
+    font-size: 24px;
+  }
+}
+
+.modal {
+  border-radius: map-get($modal-config, borderRadius);
+  position: fixed;
+  top: 200px;
+  left: 50%;
+  margin-left: -250px;
+  z-index: layers(modal);
+  width: 500px;
+  background-color: white;
+//   @include respond-below(device-medium) {
+//     max-height: 90vh;
+//     overflow-y: scroll;
+//   }
+// }
+
+	.modal-section {
+		padding: map-get($modal-config, padding);
+	}
+}
