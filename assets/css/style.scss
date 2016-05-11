@@ -265,7 +265,7 @@ $tables-user: (
 }
 
 
-@import "../../libs/barebones-components/_base.scss";
+@import "../../bower_components/barebones-components/_base.scss";
 
 
 html {
@@ -274,7 +274,7 @@ html {
 }
 
 
-$images: "../../assets/images";
+$images: "/images";
 
 body {
 	background: colors(greyscale, 100);
@@ -301,7 +301,7 @@ body {
 	}
 
 	background: {
-		image: url("../../assets/images/masthead2.jpg");
+		image: url("/images/masthead2.jpg");
 		position: center;
 		repeat: no-repeat;
 		size: cover;

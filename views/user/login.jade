@@ -1,0 +1,13 @@
+include ../_inc/_head.jade
+extends ../_inc/_layout.jade
+
+block body
+	section.landing-page-section
+			.container-x-large
+				form(method="POST")
+					if error
+						div.error #{error}
+
+					input(type="email" placeholder="email" name="email")
+					input(type="password" placeholder="password" name="password")
+					input(type="submit" value="login")
