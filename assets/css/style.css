@@ -983,7 +983,7 @@ body { background: #F5F5F5; }
 
 .logo { position: absolute; top: 0; display: block; width: 160px; }
 
-.masthead { display: table; position: relative; padding: 100px 24px 100px 24px; width: 100%; color: white; background-image: url("../../assets/images/masthead2.jpg"); background-position: center; background-repeat: no-repeat; background-size: cover; }
+.masthead { display: table; position: relative; padding: 100px 24px 100px 24px; width: 100%; color: white; background-image: url("/images/masthead2.jpg"); background-position: center; background-repeat: no-repeat; background-size: cover; }
 
 @media (min-width: 780px) { .masthead { margin-bottom: 100px; padding: 200px 24px 200px 24px; } }
 
@@ -1045,7 +1045,12 @@ body { background: #F5F5F5; }
 
 .deals > li { margin-bottom: 32px; }
 
-@media (min-width: 780px) { .deals > li { float: left; width: 33.33333%; padding: 0 16px; } }
+@media (min-width: 780px) { .deals > li { width: 32.20339%; float: left; margin-right: 1.69492%; margin-bottom: 1.69492%; }
+  .deals > li:nth-of-type(3n + 3) { margin-right: 0; } }
+
+@media (min-width: 780px) and (min-width: 780px) { .deals > li:not(:first-of-type):nth-of-type(-n+3) { margin-top: 0; } }
+
+@media (min-width: 780px) and (min-width: 780px) { .deals > li:nth-of-type(3n + 3) { margin-right: 0; } }
 
 .deals .deal { background: white; transition: all .25s; }
 

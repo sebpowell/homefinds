@@ -93,6 +93,23 @@ var conf = convict({
 				env: "IMAGE_BASE"
 			}
 		}
+	},
+
+	facebook:
+	{
+		clientid:
+		{
+			doc: "The facebook clientId",
+			format: String,
+			default: ""
+		},
+
+		clientsecret:
+		{
+			doc: "The facebook clientSecret",
+			format: String,
+			default: ""
+		}
 	}
 		
 

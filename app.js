@@ -16,7 +16,9 @@ var knex = require('knex')({
 		timezone: "UTC"
 	}
 	});
-	
+
+app.context.config = config;
+
 // setup bookshelf (SQL ORM)	
 app.context.bookshelf = require('bookshelf')(knex);
 app.context.bookshelf.plugin('registry');

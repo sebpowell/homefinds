@@ -3,6 +3,9 @@ include _head.jade
 body
 	block body
 
+	if user
+		p #{user.first_name}
+
 	footer.site-footer
 		.container-x-large
 			ul.site-footer-links

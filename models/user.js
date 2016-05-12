@@ -20,6 +20,13 @@ module.exports = function(app)
 		}
 	},
 	{
+		GENDER: {
+			MALE: 1,
+			FEMALE: 2,
+			RATHER_NOT_SAY: 4,
+			UNKNOWN: 0
+		},
+
 		genPassword: function(password)
 		{
 			return scrypt.kdfSync(password, passwordParam).toString("base64");

@@ -1,9 +1,14 @@
-var router = require('koa-router')({prefix: '/'});
+var router = require('koa-router')({prefix: '/'}),
+	Common = require('../common.js');
 
-router.get('/', function *(next)
+router.use(function *(next)
+{
+	return yield Common.loadUserIfLoggedIn(next, this);
+	
+})
+.get('/', function *(next)
 {
 	return this.render('index');
-
 });
 
 function registerRoutes(app)

@@ -1,9 +1,35 @@
 var router = require('koa-router')({prefix: '/user'});
 
+
+var facebookLoginHandler = function *(next)
+{
+	var ctx = this;
+
+	yield this.app.context.passport.authenticate('facebook', { scope: 'email'}, function*(err, user, info)
+	{	
+
+		if (err) throw err;
+		
+		if (user === false)
+		{
+			ctx.state.error = "Sorry, but we weren't able to log you in using Facebook";
+			return ctx.render('user/login');
+			
+		}
+		else
+		{
+			yield ctx.login(user);
+			return ctx.redirect('/');
+		}
+
+	}).call(this, next);
+
+}
+
+
 router.get('/', function *(next)
 {
-	console.log(this.app.context.User);
-
+	
 	this.body = "Hello user";
 
 })
@@ -35,6 +61,11 @@ router.get('/', function *(next)
 	}).call(this, next);
 
 })
+.get('/login/facebook', facebookLoginHandler)
+.get('/login/facebook/callback', facebookLoginHandler);
+
+
+
 
 function registerRoutes(app)
 {
