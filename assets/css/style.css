@@ -819,6 +819,8 @@ table { width: 100%; padding: 0; margin: 0; border-collapse: initial; border-spa
 
 img { max-width: 100%; }
 
+.form-group { margin-bottom: 32px; }
+
 .button { letter-spacing: 0.15em; }
 
 .text-serif { font-family: "sentinel"; }
@@ -1045,12 +1047,7 @@ body { background: #F5F5F5; }
 
 .deals > li { margin-bottom: 32px; }
 
-@media (min-width: 780px) { .deals > li { width: 32.20339%; float: left; margin-right: 1.69492%; margin-bottom: 1.69492%; }
-  .deals > li:nth-of-type(3n + 3) { margin-right: 0; } }
-
-@media (min-width: 780px) and (min-width: 780px) { .deals > li:not(:first-of-type):nth-of-type(-n+3) { margin-top: 0; } }
-
-@media (min-width: 780px) and (min-width: 780px) { .deals > li:nth-of-type(3n + 3) { margin-right: 0; } }
+@media (min-width: 780px) { .deals > li { float: left; width: 33.33333%; padding: 0 16px; } }
 
 .deals .deal { background: white; transition: all .25s; }
 

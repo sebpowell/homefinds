@@ -102,14 +102,18 @@
 
 
 
-
-
-
-
 // NEED TO RESET HEADING STYLES!!!! USES EMs at the moment
 
 @import "_settings";
 @import "../../bower_components/barebones-sass/dist/_base";
+
+
+.form-group {
+	margin-bottom: sizes(double); 
+}
+
+
+
 
 
 

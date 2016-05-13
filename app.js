@@ -20,14 +20,16 @@ var knex = require('knex')({
 app.context.config = config;
 
 // setup bookshelf (SQL ORM)	
-app.context.bookshelf = require('bookshelf')(knex);
+app.context.bookshelf = require('bookshelf') (knex);
 app.context.bookshelf.plugin('registry');
 app.context.bookshelf.plugin('virtuals');
 
 // setup models
 app.context.models = 
 {
-	User: require('./models/user.js')(app)
+	User: require('./models/user.js')(app),
+	Category: require('./models/category.js')(app),
+	Partner: require('./models/partner.js')(app)
 };
 
 // log everyting
