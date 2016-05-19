@@ -156,7 +156,21 @@ block body
 								a(href="#" data-deal="#{partner.backgroundImage}" data-modal="deal").button.button-empty.button-small.button-block Claim Discount
 
 
+	section.landing-page-section
+		.container-x-large
+			h3.margin-bottom-double Signup
+				form(method="post" action="/user/signup" id="signup-form")
+					.form-group
+						label Email
+						input(type="email" name="email" placeholder="email")
+						.form-feedback.is-hidden Please enter an email address
+
+					input.button.button-primary.block(type="submit" value="Sign Up")
+
 	.signup-bar
 		.container-large.clearfix
 			p.signup-bar-text.text-medium Sign up now to access exclusive discounts with the leading homeware stores – it’s free!
 			a.signup-bar-button.button.button-secondary.button-medium Join Now
+
+	script.
+		$('#signup-form').ajaxForm();

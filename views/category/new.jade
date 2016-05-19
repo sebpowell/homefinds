@@ -4,10 +4,12 @@ extends ../_inc/_layout.jade
 block body
 	.container-small
 		h1 Add New Category
-		form(method="post" action="/admin/categories")
+		form(method="post" action="/category/new")
 			.form-group
 				label Category Name
 				input(type="text" name="name" placeholder="Category Name")
 				.form-feedback.is-hidden This field is required.
 			input.button.button-primary.block(type="submit" value="Save Category" name="submit")
 
+	script.
+		$('form').ajaxForm();

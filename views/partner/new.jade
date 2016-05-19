@@ -4,7 +4,7 @@ extends ../_inc/_layout.jade
 block body
 	.container-small
 		h1.margin-bottom-double Add New Partner
-		form(method="post" action="/admin/partners")
+		form(method="post" action="/partner/new")
 			.form-group
 				label Name
 				input(type="text" name="name" placeholder="Name")
@@ -37,38 +37,13 @@ block body
 
 			
 			.form-group
-				label Category
-					select(name="category")
-						each category in categories
-							option(value="#{category.id}")= category.name
-
+				h4 Categories
+					each category in categories
+						label
+							input(type="checkbox" name="category-#{category.id}")
+							= category.name
+					
 			input.button.button-primary.block(type="submit" name="submit")
 
 	script.
-		$('form').on('submit', function(event) {
-			event.preventDefault();
-
-			var dat = {};
-
-			$(event.currentTarget).find('input, select, textarea').each(function()
-			{
-				dat[$(this).attr('name')] = $(this).val();
-			});
-
-			$.post($(event.currentTarget).attr('action'), dat)
-			
-			.done(function(data)
-			{
-				$(".alert").addClass("show").text("Company added!");
-				$("form").trigger("reset");
-				$(".form-feedback").addClass("is-hidden");
-			})
-			.fail(function(data)
-			{
-				$(".form-feedback").addClass("is-hidden");
-
-				$.each(data.responseJSON, function(key, value) {
-					$("[name="+Object.keys(value)[0]+"").next(".form-feedback").removeClass("is-hidden");
-				});
-			});
-		});
+		$('form').ajaxForm();

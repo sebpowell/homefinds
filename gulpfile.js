@@ -65,7 +65,7 @@ gulp.task("uglify", function() {
 gulp.task("watch", function() {
 	gulp.watch(['assets/css/**/*.scss'], ['sass']);
 	gulp.watch(['assets/javascript/components/*.js'], ['uglify']);
-	gulp.watch(['views/**/*.jade'], ['jade']);
+	// gulp.watch(['views/**/*.jade'], ['jade']);
 });
 
 gulp.task("default", ["watch"], function() {

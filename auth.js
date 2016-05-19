@@ -37,7 +37,7 @@ module.exports = function(app)
 
 	passport.use(new LocalStrategy(function(username, password, done)
 	{
-		
+		console.log(username, password);
 		// retrieve user	
 		return new User({email: username.toLowerCase()})
 		.fetch({require: true})
@@ -52,7 +52,7 @@ module.exports = function(app)
 			
 
 			// check password
-			if(user.checkUserPassword(password))
+			if(user.checkPassword(password))
 			{
 				return done(null, user);
 			}
@@ -81,6 +81,7 @@ module.exports = function(app)
 	},
 		function(accessToken, refreshToken, profile, cb)
 		{
+
 			// make sure there is an id and an email
 			if((! profile.id) || (! profile.emails)  || (profile.emails.length == 0))
 			{

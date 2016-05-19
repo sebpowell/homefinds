@@ -74,6 +74,8 @@ const jade = new Jade({
 // routes
 require('./controllers/pageController.js')(app);
 require('./controllers/userController.js')(app);
+require('./controllers/categoryController.js')(app);
+require('./controllers/partnerController.js')(app);
 
 // static files
 app.use(require('koa-static')(__dirname + '/assets'));
